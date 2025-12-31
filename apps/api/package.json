@@ -1,0 +1,39 @@
+{
+  "name": "@apps/api",
+  "version": "0.0.1",
+  "description": "Medusa backend for ecommerce store",
+  "license": "MIT",
+  "scripts": {
+    "build": "medusa build",
+    "migrate": "medusa db:migrate",
+    "start": "medusa start",
+    "dev": "medusa develop",
+    "seed": "medusa exec ./src/scripts/seed.ts",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down"
+  },
+  "dependencies": {
+    "@medusajs/admin-sdk": "^2.14.2",
+    "@medusajs/admin-shared": "^2.14.2",
+    "@medusajs/cli": "^2.14.2",
+    "@medusajs/core-flows": "^2.14.2",
+    "@medusajs/dashboard": "^2.14.2",
+    "@medusajs/draft-order": "^2.14.2",
+    "@medusajs/framework": "^2.14.2",
+    "@medusajs/icons": "^2.14.2",
+    "@medusajs/js-sdk": "^2.14.2",
+    "@medusajs/medusa": "^2.14.2",
+    "@medusajs/types": "^2.14.2"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.15.8",
+    "@types/node": "^22.14.0",
+    "prettier": "^3.7.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

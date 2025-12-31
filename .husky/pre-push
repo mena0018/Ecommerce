@@ -1,0 +1,9 @@
+echo "\n==============================="
+echo "🔍 Running typecheck + lint"
+echo "==============================="
+
+pnpm turbo run typecheck lint || exit 1
+
+echo "\n==============================="
+echo "✅ All pre-push checks are good"
+echo "==============================="
