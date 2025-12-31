@@ -1,0 +1,28 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "Menad Rabie's website",
+  "author": "Menad Rabie <rabie.menad.dev@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint && prettier --check .",
+    "lint:fix": "turbo run lint:fix && prettier --write .",
+    "typecheck": "turbo run typecheck",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "lint-staged": "^16.2.7",
+    "husky": "^9.1.7",
+    "prettier": "^3.7.4",
+    "turbo": "^2.7.2"
+  }
+}

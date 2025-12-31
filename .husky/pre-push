@@ -1,0 +1,9 @@
+echo "\n==============================="
+echo "🔍 Check typescript errors"
+echo "==============================="
+
+pnpm run typecheck || exit 1
+
+echo "\n==============================="
+echo "✅ All pre-push checks are good"
+echo "===============================\n"

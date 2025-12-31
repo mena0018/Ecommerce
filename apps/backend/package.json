@@ -1,0 +1,44 @@
+{
+  "name": "ecommerce-backend",
+  "version": "1.0.0",
+  "description": "Medusa backend for ecommerce store",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "medusa build",
+    "migrate": "medusa db:migrate",
+    "start": "medusa start",
+    "dev": "medusa develop",
+    "seed": "medusa exec ./src/scripts/seed.ts",
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down"
+  },
+  "dependencies": {
+    "@medusajs/admin-sdk": "^2.12.3",
+    "@medusajs/admin-shared": "^2.12.3",
+    "@medusajs/cli": "^2.12.3",
+    "@medusajs/core-flows": "^2.12.3",
+    "@medusajs/dashboard": "^2.12.3",
+    "@medusajs/draft-order": "^2.12.3",
+    "@medusajs/framework": "^2.12.3",
+    "@medusajs/icons": "^2.12.3",
+    "@medusajs/js-sdk": "^2.12.3",
+    "@medusajs/medusa": "^2.12.3",
+    "@medusajs/types": "^2.12.3"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@swc/core": "^1.15.8",
+    "@types/node": "^20.12.11",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "yalc": "^1.0.0-pre.53"
+  }
+}

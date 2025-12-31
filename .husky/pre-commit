@@ -1,0 +1,9 @@
+echo "\n==============================="
+echo "🔍 Linting staged files"
+echo "==============================="
+
+pnpm exec lint-staged || exit 1
+
+echo "==============================="
+echo "✅ All pre-commit checks are good"
+echo "===============================\n"
