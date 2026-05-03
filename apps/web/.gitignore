@@ -39,6 +39,11 @@ yarn-error.log*
 next-env.d.ts
 node_modules
 
+# skills
+.agents
+.continue
+.windsurf
+
 # Turbo
 .turbo
 
