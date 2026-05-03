@@ -20,9 +20,16 @@ export default async function StorePage({ params }: Props) {
   })
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="mb-8 text-3xl font-bold tracking-tight">All Products</h1>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+      <div className="mb-12 flex items-end justify-between">
+        <h1 className="text-foreground text-xs font-medium tracking-widest uppercase">
+          All Products
+          <span className="text-muted-foreground ml-2 font-normal">
+            ({response.products.length})
+          </span>
+        </h1>
+      </div>
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
         {response.products.map((product) => (
           <ProductCard key={product.id} product={product} countryCode={countryCode} />
         ))}

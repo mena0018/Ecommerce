@@ -26,7 +26,12 @@ export function AddToCartButton({ variantId, countryCode }: Props) {
   }
 
   return (
-    <Button onClick={handleAddToCart} disabled={!variantId || isPending} size="lg">
+    <Button
+      onClick={handleAddToCart}
+      disabled={!variantId || isPending}
+      size="lg"
+      className="w-full"
+    >
       <ShoppingBag className="h-4 w-4" />
       {isPending ? "Adding..." : "Add to cart"}
     </Button>

@@ -9,34 +9,37 @@ type Props = {
 
 export function Header({ countryCode }: Props) {
   return (
-    <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 border-b backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href={`/${countryCode}`} className="text-xl font-bold tracking-tight">
+    <header className="bg-background/95 supports-backdrop-filter:bg-background/80 border-border sticky top-0 z-50 border-b backdrop-blur-sm">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6 lg:px-8">
+        <Link
+          href={`/${countryCode}`}
+          className="text-foreground text-xs font-medium tracking-widest uppercase transition-colors hover:opacity-70"
+        >
           STORE
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           <Link
             href={`/${countryCode}/store`}
-            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+            className="text-muted-foreground hover:text-foreground text-xs font-medium tracking-wider uppercase transition-colors duration-150"
           >
             Shop
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <Button variant="ghost" size="icon" asChild>
-            <Link href={`/${countryCode}/store`}>
+            <Link href={`/${countryCode}/store`} aria-label="Search">
               <Search className="h-4 w-4" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href={`/${countryCode}/account`}>
+            <Link href={`/${countryCode}/account`} aria-label="Account">
               <User className="h-4 w-4" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href={`/${countryCode}/cart`}>
+            <Link href={`/${countryCode}/cart`} aria-label="Cart">
               <ShoppingBag className="h-4 w-4" />
             </Link>
           </Button>

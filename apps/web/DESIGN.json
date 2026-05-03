@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-03T00:00:00Z",
+  "title": "Design System: Store",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Terracotta",
+        "canonical": "oklch(0.62 0.09 35)",
+        "tonalRamp": [
+          "oklch(0.15 0.03 35)",
+          "oklch(0.25 0.05 35)",
+          "oklch(0.35 0.07 35)",
+          "oklch(0.45 0.09 35)",
+          "oklch(0.55 0.1 35)",
+          "oklch(0.62 0.09 35)",
+          "oklch(0.75 0.07 35)",
+          "oklch(0.87 0.04 35)"
+        ]
+      },
+      "accent-deep": {
+        "role": "primary-pressed",
+        "displayName": "Deep Terracotta",
+        "canonical": "oklch(0.52 0.1 35)",
+        "tonalRamp": [
+          "oklch(0.12 0.03 35)",
+          "oklch(0.22 0.05 35)",
+          "oklch(0.32 0.07 35)",
+          "oklch(0.42 0.09 35)",
+          "oklch(0.52 0.1 35)",
+          "oklch(0.62 0.09 35)",
+          "oklch(0.72 0.07 35)",
+          "oklch(0.85 0.04 35)"
+        ]
+      },
+      "accent-muted": {
+        "role": "secondary",
+        "displayName": "Muted Blush",
+        "canonical": "oklch(0.84 0.04 35)",
+        "tonalRamp": [
+          "oklch(0.5 0.03 35)",
+          "oklch(0.6 0.035 35)",
+          "oklch(0.7 0.04 35)",
+          "oklch(0.77 0.04 35)",
+          "oklch(0.84 0.04 35)",
+          "oklch(0.9 0.03 35)",
+          "oklch(0.94 0.02 35)",
+          "oklch(0.97 0.01 35)"
+        ]
+      },
+      "neutral-900": {
+        "role": "on-surface",
+        "displayName": "Ink",
+        "canonical": "oklch(0.14 0.005 35)",
+        "tonalRamp": [
+          "oklch(0.14 0.005 35)",
+          "oklch(0.22 0.007 35)",
+          "oklch(0.32 0.008 35)",
+          "oklch(0.42 0.01 35)",
+          "oklch(0.55 0.012 35)",
+          "oklch(0.68 0.012 35)",
+          "oklch(0.82 0.008 35)",
+          "oklch(0.95 0.005 35)"
+        ]
+      },
+      "surface": {
+        "role": "background",
+        "displayName": "Cream",
+        "canonical": "oklch(0.98 0.005 35)",
+        "tonalRamp": [
+          "oklch(0.7 0.01 35)",
+          "oklch(0.78 0.009 35)",
+          "oklch(0.84 0.008 35)",
+          "oklch(0.89 0.007 35)",
+          "oklch(0.93 0.006 35)",
+          "oklch(0.95 0.006 35)",
+          "oklch(0.97 0.005 35)",
+          "oklch(0.98 0.005 35)"
+        ]
+      },
+      "surface-dark": {
+        "role": "background-dark",
+        "displayName": "Charcoal",
+        "canonical": "oklch(0.11 0.005 35)",
+        "tonalRamp": [
+          "oklch(0.11 0.005 35)",
+          "oklch(0.16 0.006 35)",
+          "oklch(0.22 0.007 35)",
+          "oklch(0.3 0.008 35)",
+          "oklch(0.38 0.009 35)",
+          "oklch(0.48 0.01 35)",
+          "oklch(0.6 0.01 35)",
+          "oklch(0.75 0.008 35)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Homepage hero headlines and brand statements only. Maximum 4-6 words per line. Never in the product catalog."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles on the homepage, product name at top of PDP."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Navigation links, card product names, modal titles, form section headers."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Product descriptions, cart line items, checkout form labels. Max line length 65ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Price badges, filter chips, category tags, button text. All-caps only at this scale."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-product",
+        "value": "cubic-bezier(0.0, 0.0, 0.2, 1)",
+        "purpose": "Standard ease-out for product card image scale, button background transitions."
+      },
+      {
+        "name": "ease-enter",
+        "value": "cubic-bezier(0.0, 0.0, 0.2, 1)",
+        "purpose": "Page and modal enter animations."
+      },
+      {
+        "name": "duration-fast",
+        "value": "150ms",
+        "purpose": "Color/opacity transitions (nav link hover, button hover color)."
+      },
+      {
+        "name": "duration-standard",
+        "value": "300ms",
+        "purpose": "Transform transitions (product card image scale, page fade-in)."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Sharp corners, ink background, terracotta on hover.",
+      "html": "<button class=\"ds-btn-primary\">SHOP NOW</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #1a1614; color: #faf7f5; padding: 12px 32px; border: none; border-radius: 0; font-family: Inter, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 150ms cubic-bezier(0.0, 0.0, 0.2, 1); } .ds-btn-primary:hover { background: #c9826b; } .ds-btn-primary:active { background: #a85f4a; } .ds-btn-primary:focus-visible { outline: 2px solid #c9826b; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.4; pointer-events: none; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action. 1px border, transparent background.",
+      "html": "<button class=\"ds-btn-outline\">VIEW ALL</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: transparent; color: #1a1614; padding: 12px 32px; border: 1px solid #e8e0dc; border-radius: 0; font-family: Inter, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 150ms cubic-bezier(0.0, 0.0, 0.2, 1), border-color 150ms; } .ds-btn-outline:hover { background: #f4efec; border-color: #1a1614; } .ds-btn-outline:focus-visible { outline: 2px solid #c9826b; outline-offset: 2px; } .ds-btn-outline:disabled { opacity: 0.4; pointer-events: none; }"
+    },
+    {
+      "name": "Ghost Icon Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Icon-only nav actions (search, cart, account). No background.",
+      "html": "<button class=\"ds-btn-ghost\" aria-label=\"Cart\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z\"/><line x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\"/><path d=\"M16 10a4 4 0 01-8 0\"/></svg></button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: transparent; border: none; border-radius: 0; color: #5c4f4a; cursor: pointer; transition: color 150ms cubic-bezier(0.0, 0.0, 0.2, 1); } .ds-btn-ghost:hover { color: #1a1614; } .ds-btn-ghost:focus-visible { outline: 2px solid #c9826b; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Bottom-border only input. No box, no radius.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\">EMAIL</label><input class=\"ds-input\" type=\"email\" placeholder=\"your@email.com\"></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; } .ds-field-label { font-family: Inter, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5c4f4a; } .ds-input { background: transparent; border: none; border-bottom: 1px solid #e8e0dc; border-radius: 0; padding: 10px 0; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: #1a1614; outline: none; transition: border-color 150ms cubic-bezier(0.0, 0.0, 0.2, 1); } .ds-input::placeholder { color: #9e8e88; } .ds-input:focus { border-bottom: 2px solid #1a1614; padding-bottom: 9px; } .ds-input:disabled { opacity: 0.4; cursor: not-allowed; }"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "Catalog card. Image-first, minimal metadata.",
+      "html": "<a class=\"ds-product-card\" href=\"#\"><div class=\"ds-product-card__image\"><img src=\"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop\" alt=\"White T-Shirt\" class=\"ds-product-card__img\"></div><div class=\"ds-product-card__meta\"><span class=\"ds-product-card__name\">Essential Tee</span><span class=\"ds-product-card__price\">€49</span></div></a>",
+      "css": ".ds-product-card { display: block; text-decoration: none; color: inherit; } .ds-product-card__image { background: #f4efec; border-radius: 8px; aspect-ratio: 1; overflow: hidden; } .ds-product-card__img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms cubic-bezier(0.0, 0.0, 0.2, 1); } .ds-product-card:hover .ds-product-card__img { transform: scale(1.03); } .ds-product-card__meta { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; } .ds-product-card__name { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #1a1614; } .ds-product-card__price { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: #5c4f4a; }"
+    },
+    {
+      "name": "Navigation Header",
+      "kind": "nav",
+      "refersTo": "button-ghost",
+      "description": "Sticky editorial header. Blurred background, minimal presence.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header__inner\"><a class=\"ds-header__logo\" href=\"#\">STORE</a><nav class=\"ds-header__nav\"><a class=\"ds-header__link\" href=\"#\">Shop</a></nav><div class=\"ds-header__actions\"><button class=\"ds-btn-ghost\" aria-label=\"Search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/></svg></button><button class=\"ds-btn-ghost\" aria-label=\"Cart\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z\"/><line x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\"/><path d=\"M16 10a4 4 0 01-8 0\"/></svg></button></div></div></header>",
+      "css": ".ds-header { position: sticky; top: 0; z-index: 50; background: rgba(250, 247, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #e8e0dc; } .ds-header__inner { max-width: 1280px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; } .ds-header__logo { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1a1614; text-decoration: none; } .ds-header__nav { display: flex; align-items: center; gap: 32px; } .ds-header__link { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #5c4f4a; text-decoration: none; transition: color 150ms; } .ds-header__link:hover { color: #1a1614; } .ds-header__actions { display: flex; align-items: center; gap: 4px; }"
+    },
+    {
+      "name": "Hero CTA (Signature)",
+      "kind": "custom",
+      "refersTo": "button-outline",
+      "description": "Homepage editorial hero — full-bleed image with corner text, not a centered overlay.",
+      "html": "<section class=\"ds-hero\"><div class=\"ds-hero__image\"><img src=\"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop\" alt=\"\" class=\"ds-hero__img\"></div><div class=\"ds-hero__content\"><span class=\"ds-hero__eyebrow\">New Collection</span><h1 class=\"ds-hero__headline\">Wear<br>Less,<br>Feel<br>More.</h1><a class=\"ds-hero__cta\" href=\"#\">Discover <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"display:inline;vertical-align:middle\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"12 5 19 12 12 19\"/></svg></a></div></section>",
+      "css": ".ds-hero { position: relative; width: 100%; aspect-ratio: 16/9; min-height: 480px; overflow: hidden; } .ds-hero__image { position: absolute; inset: 0; } .ds-hero__img { width: 100%; height: 100%; object-fit: cover; } .ds-hero__content { position: absolute; bottom: 48px; left: 48px; right: 48px; } .ds-hero__eyebrow { display: block; font-family: Inter, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(250, 247, 245, 0.7); margin-bottom: 16px; } .ds-hero__headline { font-family: Inter, system-ui, sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; line-height: 1.05; letter-spacing: -0.03em; color: #faf7f5; margin: 0 0 32px; } .ds-hero__cta { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #faf7f5; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(250, 247, 245, 0.4); padding-bottom: 4px; transition: border-color 150ms, gap 150ms; } .ds-hero__cta:hover { border-color: rgba(250, 247, 245, 0.9); gap: 12px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Wardrobe",
+    "overview": "This system is built on deliberate restraint. Every screen gives the product image room to speak before any interface element reaches for attention. The brand accent — a warm terracotta — appears selectively, never as decoration, always as direction. Whitespace is the primary design element on brand surfaces; density only appears where the user is transacting.\n\nThe catalog surfaces step back entirely. Navigation disappears into the edges. Product photography fills the frame. Typography is light-weight at display scale, medium-weight at functional scale — the contrast signals where to read versus where to act.\n\nThis system explicitly rejects: chaotic grids packed with promotion badges, neon sale callouts, discount banners above the fold, stock-photo hero sections, generic SaaS-cream color fields, and the fast-fashion visual language of Shein.",
+    "keyCharacteristics": [
+      "Flat surfaces, no shadows — depth from scale contrast and spacing rhythm",
+      "Warm terracotta accent on ≤10% of any surface",
+      "Inter at 300 weight for display — lightness reads as confidence",
+      "Brand-tinted neutrals throughout — no pure #000 or #fff",
+      "Sharp corners on interactive components",
+      "prefers-reduced-motion respected throughout"
+    ],
+    "rules": [
+      {
+        "name": "The One Warmth Rule",
+        "body": "Every neutral must carry a terracotta tint. Chroma 0.005–0.015 is enough. Pure black and pure white are prohibited.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rare Accent Rule",
+        "body": "Terracotta appears on ≤10% of any given screen. Its rarity is what makes it feel intentional.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight-Two Rule",
+        "body": "The system uses exactly two functional weights: 300 (editorial) and 500 (functional). Weight 400 for body copy only. No 600, 700, or 800.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "body": "If you reach for box-shadow, stop. Use a background-tint shift or a 1px border instead.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep Inter at 300 weight for all display and headline text",
+      "Do leave generous whitespace between sections — 96px between major blocks on desktop",
+      "Do use the terracotta accent on primary CTA hover states, active nav states, and focus rings only",
+      "Do tint every neutral toward terracotta (chroma 0.005 minimum)",
+      "Do use sharp corners (border-radius: 0) on all interactive controls",
+      "Do keep product card hover effects subtle — 103% scale over 300ms",
+      "Do respect prefers-reduced-motion on all transitions",
+      "Do treat the homepage as a brand statement — one hero, one headline, one CTA"
+    ],
+    "donts": [
+      "Don't use pure black (#000) or pure white (#fff) anywhere",
+      "Don't show discount banners, sale badges, or promotional callouts above the fold",
+      "Don't pack the homepage with a product grid",
+      "Don't use box-shadow anywhere",
+      "Don't use rounded corners on buttons or inputs",
+      "Don't use gradient text (background-clip: text)",
+      "Don't use side-stripe border accents (border-left > 1px as colored stripe)",
+      "Don't repeat the terracotta accent more than 10% of any screen",
+      "Don't use uppercase text above label scale",
+      "Don't stack multiple promotions or CTAs"
+    ]
+  }
+}
