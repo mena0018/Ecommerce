@@ -1,25 +1,56 @@
 {
   "name": "ecommerce",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Menad Rabie's website",
   "author": "Menad Rabie <rabie.menad.dev@gmail.com>",
   "private": true,
   "license": "MIT",
   "packageManager": "pnpm@10.27.0",
   "engines": {
-    "node": ">=22.14.0"
+    "node": ">=22.22.0"
   },
   "scripts": {
     "build": "turbo run build",
+    "build:api": "turbo run build --filter=@repo/api",
+    "build:web": "turbo run build --filter=@repo/web",
     "start": "turbo run start",
     "dev": "turbo run dev",
+    "dev:api": "turbo run dev --filter=@repo/api",
+    "dev:web": "turbo run dev --filter=@repo/web",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
+    "lint:web": "turbo run lint --filter=@repo/web",
+    "format": "prettier --write .",
+    "prepare": "husky",
     "typecheck": "turbo run typecheck",
-    "test": "turbo run test",
-    "prepare": "husky"
+    "typecheck:api": "turbo run typecheck --filter=@repo/api",
+    "typecheck:web": "turbo run typecheck --filter=@repo/web",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "clean:cache": "turbo daemon clean"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^19.2.3",
+      "@types/react-dom": "^19.2.3"
+    },
+    "ignoredBuiltDependencies": [
+      "@medusajs/telemetry"
+    ],
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "esbuild",
+      "msgpackr-extract",
+      "protobufjs",
+      "sharp"
+    ]
   },
   "devDependencies": {
-    "turbo": "^2.7.2"
+    "@types/node": "^22.14.0",
+    "eslint": "^9.39.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "turbo": "^2.7.3",
+    "typescript": "5.9.3"
   }
 }
