@@ -1,13 +1,15 @@
 {
-  "files.insertFinalNewline": true,
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
+  // Editor settings
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ]
+  // ESLint settings
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+
+  // Extensions settings
+  "conventionalCommits.promptCI": false,
+  "conventionalCommits.promptBody": false,
+  "conventionalCommits.promptFooter": false
 }

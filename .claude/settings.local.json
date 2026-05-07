@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm build:web)",
+      "Bash(git apply *)",
+      "Bash(rm .git/lint-staged_unstaged.patch)"
+    ]
+  }
+}

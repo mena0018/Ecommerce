@@ -1,7 +1,9 @@
 {
   "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
   "tasks": {
     "build": {
+      "env": ["NODE_ENV"],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -12,13 +14,18 @@
       "cache": false,
       "persistent": true
     },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
     "typecheck": {
       "dependsOn": ["^build"]
     },
-    "test": {
-      "dependsOn": ["^build"]
+    "clean": {
+      "cache": false
     },
-    "lint": {},
-    "lint:fix": {}
+    "test": {
+      "dependsOn": ["^build"],
+      "cache": true
+    }
   }
 }
