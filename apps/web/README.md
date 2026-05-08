@@ -110,6 +110,30 @@ NEXT_PUBLIC_STRIPE_KEY=<your-stripe-public-key>
 
 You'll also need to setup the integrations in your Medusa server. See the [Medusa documentation](https://docs.medusajs.com) for more information on how to configure [Stripe](https://docs.medusajs.com/resources/commerce-modules/payment/payment-provider/stripe#main).
 
+# Deployment
+
+The storefront is deployed on **Vercel**. The CI/CD pipeline is split between GitHub Actions (CI) and Vercel (CD).
+
+## How it works
+
+- **Pull requests** → Vercel automatically builds a preview deployment and posts the URL as a check on the PR. CI (`format:check`, `typecheck`, `lint`, `build`) must pass before merge.
+- **Merges to `main`** → Vercel deploys to production automatically.
+
+Builds for `@repo/web` are triggered only when relevant files change (`apps/web/**` or its workspace dependencies). Commits touching only `apps/api/**`, root config, or docs are skipped via [`turbo-ignore`](https://turborepo.com/docs/reference/turbo-ignore) — see [`vercel.json`](../../vercel.json).
+
+## Required environment variables
+
+Set these in **Vercel → Project Settings → Environment Variables** for both `Production` and `Preview` scopes. See [`.env.template`](./.env.template) for the full list.
+
+| Variable                                 | Required | Notes                                                                 |
+| ---------------------------------------- | -------- | --------------------------------------------------------------------- |
+| `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`     | Yes      | Medusa publishable API key — no default, build fails without it       |
+| `MEDUSA_BACKEND_URL`                     | Override | Defaults to `http://localhost:9000` — set to your deployed Medusa URL |
+| `NEXT_PUBLIC_DEFAULT_REGION`             | Override | Defaults to `eu`                                                      |
+| `NEXT_PUBLIC_BASE_URL`                   | Override | Defaults to `http://localhost:3000`                                   |
+| `NEXT_PUBLIC_STRIPE_KEY`                 | Optional | Only if Stripe is enabled                                             |
+| `MEDUSA_CLOUD_S3_HOSTNAME` / `_PATHNAME` | Optional | Remote image hosting                                                  |
+
 # Resources
 
 ## Learn more about Medusa
