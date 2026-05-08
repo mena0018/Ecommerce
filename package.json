@@ -20,6 +20,7 @@
     "lint": "turbo run lint",
     "lint:web": "turbo run lint --filter=@repo/web",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky",
     "typecheck": "turbo run typecheck",
     "typecheck:api": "turbo run typecheck --filter=@repo/api",
