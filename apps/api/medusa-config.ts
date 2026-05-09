@@ -26,5 +26,31 @@ module.exports = defineConfig({
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
     backendUrl: process.env.MEDUSA_BACKEND_URL
-  }
+  },
+
+  modules: [
+    // Redis-based cache — replaces in-memory cache (survives restarts)
+    {
+      resolve: "@medusajs/medusa/cache-redis",
+      options: {
+        redisUrl: process.env.REDIS_URL
+      }
+    },
+    // Redis-based event bus — required for server ↔ worker communication
+    {
+      resolve: "@medusajs/medusa/event-bus-redis",
+      options: {
+        redisUrl: process.env.REDIS_URL
+      }
+    },
+    // Redis-based workflow engine — workflows survive container restarts
+    {
+      resolve: "@medusajs/medusa/workflow-engine-redis",
+      options: {
+        redis: {
+          url: process.env.REDIS_URL
+        }
+      }
+    }
+  ]
 })
