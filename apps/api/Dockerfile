@@ -28,15 +28,13 @@ RUN test -f .medusa/server/public/admin/index.html || \
 # -----------------------------
 FROM node:22-alpine
 
-RUN npm install -g pnpm
-
 WORKDIR /app
 
-# Copy only the compiled server output (includes its own package.json)
+# Copy compiled server output
 COPY --from=builder /app/apps/api/.medusa/server ./
 
-# Install production dependencies
-RUN pnpm install --prod
+# Reuse node_modules from builder instead of reinstalling
+COPY --from=builder /app/apps/api/node_modules ./node_modules
 
 COPY apps/api/docker-start.sh ./
 RUN chmod +x ./docker-start.sh
