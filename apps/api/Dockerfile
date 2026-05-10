@@ -36,7 +36,8 @@ WORKDIR /app
 # Copy only the final JS build
 COPY --from=builder /app/apps/api/.medusa/server ./
 
-# Reuse node_modules from builder instead of reinstalling
+# Copy node_modules + pnpm virtual store (symlinks in node_modules point into .pnpm)
+COPY --from=builder /app/node_modules/.pnpm ./node_modules/.pnpm
 COPY --from=builder /app/apps/api/node_modules ./node_modules
 
 # Copy and make the entrypoint executable
