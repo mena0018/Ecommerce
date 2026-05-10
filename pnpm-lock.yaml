@@ -45,9 +45,6 @@ importers:
       '@medusajs/admin-shared':
         specifier: ^2.14.2
         version: 2.14.2
-      '@medusajs/cache-redis':
-        specifier: ^2.14.2
-        version: 2.14.2(@medusajs/framework@2.14.2(@medusajs/cli@2.14.2(@types/node@22.19.17))(@types/node@22.19.17)(ioredis@5.10.1)(vite@5.4.21(@types/node@22.19.17)(lightningcss@1.32.0))(zod@4.4.2))
       '@medusajs/cli':
         specifier: ^2.14.2
         version: 2.14.2(@types/node@22.19.17)
@@ -60,9 +57,6 @@ importers:
       '@medusajs/draft-order':
         specifier: ^2.14.2
         version: 2.14.2(@medusajs/admin-sdk@2.14.2)(@medusajs/cli@2.14.2(@types/node@22.19.17))(@medusajs/framework@2.14.2(@medusajs/cli@2.14.2(@types/node@22.19.17))(@types/node@22.19.17)(ioredis@5.10.1)(vite@5.4.21(@types/node@22.19.17)(lightningcss@1.32.0))(zod@4.4.2))(@medusajs/icons@2.14.2(react@18.3.1))(@medusajs/ui@4.1.9(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@medusajs/event-bus-redis':
-        specifier: ^2.14.2
-        version: 2.14.2(@medusajs/framework@2.14.2(@medusajs/cli@2.14.2(@types/node@22.19.17))(@types/node@22.19.17)(ioredis@5.10.1)(vite@5.4.21(@types/node@22.19.17)(lightningcss@1.32.0))(zod@4.4.2))
       '@medusajs/framework':
         specifier: ^2.14.2
         version: 2.14.2(@medusajs/cli@2.14.2(@types/node@22.19.17))(@types/node@22.19.17)(ioredis@5.10.1)(vite@5.4.21(@types/node@22.19.17)(lightningcss@1.32.0))(zod@4.4.2)
@@ -78,9 +72,6 @@ importers:
       '@medusajs/types':
         specifier: ^2.14.2
         version: 2.14.2(ioredis@5.10.1)(vite@5.4.21(@types/node@22.19.17)(lightningcss@1.32.0))
-      '@medusajs/workflow-engine-redis':
-        specifier: ^2.14.2
-        version: 2.14.2(@medusajs/framework@2.14.2(@medusajs/cli@2.14.2(@types/node@22.19.17))(@types/node@22.19.17)(ioredis@5.10.1)(vite@5.4.21(@types/node@22.19.17)(lightningcss@1.32.0))(zod@4.4.2))
     devDependencies:
       '@swc/core':
         specifier: ^1.15.8

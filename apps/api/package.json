@@ -17,18 +17,15 @@
   "dependencies": {
     "@medusajs/admin-sdk": "^2.14.2",
     "@medusajs/admin-shared": "^2.14.2",
-    "@medusajs/cache-redis": "^2.14.2",
     "@medusajs/cli": "^2.14.2",
     "@medusajs/core-flows": "^2.14.2",
     "@medusajs/dashboard": "^2.14.2",
     "@medusajs/draft-order": "^2.14.2",
-    "@medusajs/event-bus-redis": "^2.14.2",
     "@medusajs/framework": "^2.14.2",
     "@medusajs/icons": "^2.14.2",
     "@medusajs/js-sdk": "^2.14.2",
     "@medusajs/medusa": "^2.14.2",
-    "@medusajs/types": "^2.14.2",
-    "@medusajs/workflow-engine-redis": "^2.14.2"
+    "@medusajs/types": "^2.14.2"
   },
   "devDependencies": {
     "@swc/core": "^1.15.8",

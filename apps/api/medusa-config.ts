@@ -29,23 +29,16 @@ module.exports = defineConfig({
   },
 
   modules: [
-    // Redis-based cache — replaces in-memory cache (survives restarts)
-    {
-      resolve: "@medusajs/cache-redis",
-      options: {
-        redisUrl: process.env.REDIS_URL
-      }
-    },
     // Redis-based event bus — required for server ↔ worker communication
     {
-      resolve: "@medusajs/event-bus-redis",
+      resolve: "@medusajs/medusa/event-bus-redis",
       options: {
         redisUrl: process.env.REDIS_URL
       }
     },
     // Redis-based workflow engine — workflows survive container restarts
     {
-      resolve: "@medusajs/workflow-engine-redis",
+      resolve: "@medusajs/medusa/workflow-engine-redis",
       options: {
         redis: {
           url: process.env.REDIS_URL
