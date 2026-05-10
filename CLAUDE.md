@@ -39,3 +39,8 @@ packages/
 `apps/web`: `MEDUSA_BACKEND_URL`, `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`, `NEXT_PUBLIC_DEFAULT_REGION`.
 
 `apps/api`: see `medusa-config.ts`.
+
+## Git
+
+- **Never** add `Co-Authored-By: Claude` or any Claude/Anthropic attribution to commits, PRs, or any other git artifacts.
+- **Never** mention Claude, Anthropic, or AI tooling in commit messages, PR titles, PR descriptions, or code comments.
