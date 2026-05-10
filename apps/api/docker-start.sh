@@ -17,8 +17,8 @@ DISABLE_MEDUSA_ADMIN=${DISABLE_MEDUSA_ADMIN:-false}
 EOF
 
 echo "Running migrations..."
-npm run predeploy
+node_modules/.bin/medusa db:migrate
 echo "Migrations completed"
 
 echo "Starting Medusa server..."
-exec npm run start
+exec node_modules/.bin/medusa start
