@@ -23,8 +23,11 @@ RUN test -f apps/api/.medusa/server/public/admin/index.html || \
     (echo "Admin build failed - index.html not found" && exit 1)
 
 # Install production dependencies inside .medusa/server so it is self-contained
+# CI=true tells pnpm to skip TTY-only prompts; --ignore-workspace isolates this
+# install from the parent monorepo so it only resolves .medusa/server's package.json
+ENV CI=true
 WORKDIR /app/apps/api/.medusa/server
-RUN pnpm install --prod
+RUN pnpm install --prod --ignore-workspace
 
 # Move entrypoint into the production build directory
 RUN cp /app/apps/api/docker-start.sh ./docker-start.sh
