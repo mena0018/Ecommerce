@@ -31,8 +31,6 @@ RUN test -f apps/api/.medusa/server/public/admin/index.html || \
 # -----------------------------
 FROM node:22-alpine
 
-RUN npm install -g pnpm
-
 WORKDIR /app
 
 # Copy only the final JS build
