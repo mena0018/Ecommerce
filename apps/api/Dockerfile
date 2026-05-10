@@ -22,7 +22,12 @@ RUN pnpm --filter @repo/api run build
 RUN test -f apps/api/.medusa/server/public/admin/index.html || \
     (echo "Admin build failed - index.html not found" && exit 1)
 
-WORKDIR /app/apps/api
+# Install production dependencies inside .medusa/server so it is self-contained
+WORKDIR /app/apps/api/.medusa/server
+RUN pnpm install --prod
+
+# Move entrypoint into the production build directory
+RUN cp /app/apps/api/docker-start.sh ./docker-start.sh
 
 EXPOSE 9000
 

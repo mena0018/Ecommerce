@@ -21,4 +21,4 @@ pnpm run migrate
 echo "Migrations completed"
 
 echo "Starting Medusa server..."
-exec pnpm run start
+pnpm run start
