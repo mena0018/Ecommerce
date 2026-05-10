@@ -17,8 +17,8 @@ DISABLE_MEDUSA_ADMIN=${DISABLE_MEDUSA_ADMIN:-false}
 EOF
 
 echo "Running migrations..."
-npm run migrate
+pnpm run migrate
 echo "Migrations completed"
 
 echo "Starting Medusa server..."
-exec npm run start
+exec pnpm run start
