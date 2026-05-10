@@ -12,8 +12,6 @@ RUN pnpm install --frozen-lockfile --filter @repo/api...
 
 WORKDIR /app/apps/api
 
-RUN pnpm run build
-
 EXPOSE 9000
 
 CMD ["./docker-start.sh"]
