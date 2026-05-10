@@ -5,10 +5,14 @@ loadEnv(process.env.NODE_ENV ?? "development", process.cwd())
 module.exports = defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
+    // SSL disabled: PostgreSQL and Medusa run on the same Docker network
+    // (no traffic leaves the server, so SSL adds no security benefit)
     databaseDriverOptions: {
       ssl: false,
       sslmode: "disable"
     },
+    redisUrl: process.env.REDIS_URL,
+    workerMode: (process.env.MEDUSA_WORKER_MODE ?? "shared") as "shared" | "worker" | "server",
 
     http: {
       storeCors: process.env.STORE_CORS ?? "",
@@ -20,26 +24,26 @@ module.exports = defineConfig({
   },
 
   admin: {
-    vite: (config) => {
-      const hmrConfig = config.server?.hmr
+    disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
+    backendUrl: process.env.MEDUSA_BACKEND_URL
+  },
 
-      return {
-        ...config,
-        server: {
-          ...config.server,
-          host: "0.0.0.0",
-          // Allow all hosts when running in Docker (development mode)
-          // In production, this should be more restrictive
-          allowedHosts: ["localhost", ".localhost", "127.0.0.1"],
-          hmr: {
-            ...hmrConfig,
-            // HMR websocket port inside container
-            port: 5173,
-            // Port browser connects to (exposed in docker-compose.yml)
-            clientPort: 5173
-          }
+  modules: [
+    // Redis-based event bus — required for server ↔ worker communication
+    {
+      resolve: "@medusajs/medusa/event-bus-redis",
+      options: {
+        redisUrl: process.env.REDIS_URL
+      }
+    },
+    // Redis-based workflow engine — workflows survive container restarts
+    {
+      resolve: "@medusajs/medusa/workflow-engine-redis",
+      options: {
+        redis: {
+          redisUrl: process.env.REDIS_URL
         }
       }
     }
-  }
+  ]
 })
