@@ -2,7 +2,7 @@
 set -e
 
 echo "Creating .env.production with runtime environment variables..."
-cat > .env.production << EOF
+cat > .medusa/server/.env.production << EOF
 NODE_ENV=production
 DATABASE_URL=${DATABASE_URL:-}
 REDIS_URL=${REDIS_URL:-}
@@ -21,4 +21,5 @@ pnpm run migrate
 echo "Migrations completed"
 
 echo "Starting Medusa server..."
-exec pnpm run start
+cd .medusa/server
+exec node_modules/.bin/medusa start
